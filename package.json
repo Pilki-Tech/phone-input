@@ -28,9 +28,11 @@
     "dist"
   ],
   "devDependencies": {
+    "@types/vue-tel-input": "^2.1.6",
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vue-tsc": "^1.8.5"
+    "vitepress": "^1.0.0-alpha.65",
+    "vue-tsc": "^1.2.0"
   }
 }
