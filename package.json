@@ -13,13 +13,13 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/vue-tel-input.js",
-      "require": "./dist/vue-tel-input.umd.cjs"
+      "import": "./dist/phone-input.js",
+      "require": "./dist/phone-input.umd.cjs"
     },
-    "./vue-tel-input.css": "./dist/vue-tel-input.css"
+    "./phone-input.css": "./dist/phone-input.css"
   },
-  "main": "./dist/vue-tel-input.umd.cjs",
-  "module": "./dist/vue-tel-input.js",
+  "main": "./dist/phone-input.umd.cjs",
+  "module": "./dist/phone-input.js",
   "dependencies": {
     "vue": "^3.3.4",
     "vue-tel-input": "^8.1.4"
