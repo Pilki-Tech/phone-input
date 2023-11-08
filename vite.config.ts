@@ -6,6 +6,9 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [vue()],
   base: '/phone-input/',
+  server: {
+    port: 8080,
+  },
   build: {
     cssCodeSplit: true,
     lib: {
