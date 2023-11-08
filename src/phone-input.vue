@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 
 const AVAILABLE_COUNTRIES = ['BY', 'UZ', 'RU']
