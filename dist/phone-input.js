@@ -1627,7 +1627,7 @@ function A(d) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
   }, A(d);
 }
-function M(d, t) {
+function D(d, t) {
   if (!(d instanceof t))
     throw new TypeError("Cannot call a class as a function");
 }
@@ -1642,7 +1642,7 @@ function k(d, t, e) {
 }
 var ft = "1.2.0", pt = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ */ function() {
   function d(t) {
-    M(this, d), gt(t), this.metadata = t, Id.call(this, t);
+    D(this, d), gt(t), this.metadata = t, Id.call(this, t);
   }
   return k(d, [{
     key: "getCountries",
@@ -1828,7 +1828,7 @@ var ft = "1.2.0", pt = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ *
   }]), d;
 }(), td = /* @__PURE__ */ function() {
   function d(t, e) {
-    M(this, d), this.globalMetadataObject = e, this.metadata = t, Id.call(this, e.metadata);
+    D(this, d), this.globalMetadataObject = e, this.metadata = t, Id.call(this, e.metadata);
   }
   return k(d, [{
     key: "callingCode",
@@ -1964,7 +1964,7 @@ var ft = "1.2.0", pt = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ *
   }]), d;
 }(), yt = /* @__PURE__ */ function() {
   function d(t, e) {
-    M(this, d), this._format = t, this.metadata = e;
+    D(this, d), this._format = t, this.metadata = e;
   }
   return k(d, [{
     key: "pattern",
@@ -2011,7 +2011,7 @@ var ft = "1.2.0", pt = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ *
   }]), d;
 }(), mt = /^\(?\$1\)?$/, bt = /* @__PURE__ */ function() {
   function d(t, e) {
-    M(this, d), this.type = t, this.metadata = e;
+    D(this, d), this.type = t, this.metadata = e;
   }
   return k(d, [{
     key: "pattern",
@@ -2077,8 +2077,8 @@ var Ot = ";ext=", O = function(d) {
   return "([".concat(b, "]{1,").concat(d, "})");
 };
 function Nd(d) {
-  var t = "20", e = "15", n = "9", r = "6", o = "[  \\t,]*", $ = "[:\\.．]?[  \\t,-]*", i = "#?", a = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", u = "(?:[xｘ#＃~～]|int|ｉｎｔ)", f = "[- ]+", c = "[  \\t]*", v = "(?:,{2}|;)", w = Ot + O(t), Dd = o + a + $ + O(t) + i, Md = o + u + $ + O(n) + i, kd = f + O(r) + "#", jd = c + v + $ + O(e) + i, Rd = c + "(?:,)+" + $ + O(n) + i;
-  return w + "|" + Dd + "|" + Md + "|" + kd + "|" + jd + "|" + Rd;
+  var t = "20", e = "15", n = "9", r = "6", o = "[  \\t,]*", $ = "[:\\.．]?[  \\t,-]*", i = "#?", a = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", u = "(?:[xｘ#＃~～]|int|ｉｎｔ)", f = "[- ]+", c = "[  \\t]*", v = "(?:,{2}|;)", w = Ot + O(t), Md = o + a + $ + O(t) + i, Dd = o + u + $ + O(n) + i, kd = f + O(r) + "#", jd = c + v + $ + O(e) + i, Rd = c + "(?:,)+" + $ + O(n) + i;
+  return w + "|" + Md + "|" + Dd + "|" + kd + "|" + jd + "|" + Rd;
 }
 var wt = "[" + b + "]{" + H + "}", Pt = "[" + W + "]{0,1}(?:[" + T + "]*[" + b + "]){3,}[" + T + b + "]*", St = new RegExp("^[" + W + "]{0,1}(?:[" + T + "]*[" + b + "]){1,2}$", "i"), It = Pt + // Phone number extensions
 "(?:" + Nd() + ")?", Nt = new RegExp(
@@ -2181,11 +2181,11 @@ var Tt = {
 function At(d) {
   return Tt[d];
 }
-function Dt(d, t) {
+function Mt(d, t) {
   var e = typeof Symbol < "u" && d[Symbol.iterator] || d["@@iterator"];
   if (e)
     return (e = e.call(d)).next.bind(e);
-  if (Array.isArray(d) || (e = Mt(d)) || t && d && typeof d.length == "number") {
+  if (Array.isArray(d) || (e = Dt(d)) || t && d && typeof d.length == "number") {
     e && (d = e);
     var n = 0;
     return function() {
@@ -2195,7 +2195,7 @@ function Dt(d, t) {
   throw new TypeError(`Invalid attempt to iterate non-iterable instance.
 In order to be iterable, non-array objects must have a [Symbol.iterator]() method.`);
 }
-function Mt(d, t) {
+function Dt(d, t) {
   if (d) {
     if (typeof d == "string")
       return rd(d, t);
@@ -2213,7 +2213,7 @@ function rd(d, t) {
   return n;
 }
 function od(d) {
-  for (var t = "", e = Dt(d.split("")), n; !(n = e()).done; ) {
+  for (var t = "", e = Mt(d.split("")), n; !(n = e()).done; ) {
     var r = n.value;
     t += kt(r, t) || "";
   }
@@ -2571,9 +2571,9 @@ function r1(d, t, e, n) {
   var r = n.countryCallingCode(), o = e.v2 ? d.nationalNumber : d.phone, $;
   switch (t) {
     case "NATIONAL":
-      return o ? ($ = D(o, d.carrierCode, "NATIONAL", n, e), B($, d.ext, n, e.formatExtension)) : "";
+      return o ? ($ = M(o, d.carrierCode, "NATIONAL", n, e), B($, d.ext, n, e.formatExtension)) : "";
     case "INTERNATIONAL":
-      return o ? ($ = D(o, null, "INTERNATIONAL", n, e), $ = "+".concat(r, " ").concat($), B($, d.ext, n, e.formatExtension)) : "+".concat(r);
+      return o ? ($ = M(o, null, "INTERNATIONAL", n, e), $ = "+".concat(r, " ").concat($), B($, d.ext, n, e.formatExtension)) : "+".concat(r);
     case "E.164":
       return "+".concat(r).concat(o);
     case "RFC3966":
@@ -2590,7 +2590,7 @@ function r1(d, t, e, n) {
       throw new Error('Unknown "format" argument passed to "formatNumber()": "'.concat(t, '"'));
   }
 }
-function D(d, t, e, n, r) {
+function M(d, t, e, n, r) {
   var o = o1(n.formats(), d);
   return o ? Qt(d, o, {
     useInternationalFormat: e === "INTERNATIONAL",
@@ -2617,12 +2617,12 @@ function B(d, t, e, n) {
 function i1(d, t, e, n, r) {
   var o = z(n, r.metadata);
   if (o === e) {
-    var $ = D(d, t, "NATIONAL", r);
+    var $ = M(d, t, "NATIONAL", r);
     return e === "1" ? e + " " + $ : $;
   }
   var i = d1(n, void 0, r.metadata);
   if (i)
-    return "".concat(i, " ").concat(e, " ").concat(D(d, null, "INTERNATIONAL", r));
+    return "".concat(i, " ").concat(e, " ").concat(M(d, null, "INTERNATIONAL", r));
 }
 function fd(d, t) {
   var e = Object.keys(d);
@@ -3033,7 +3033,7 @@ function bd(d) {
 function A1(d, t, e) {
   return t in d ? Object.defineProperty(d, t, { value: e, enumerable: !0, configurable: !0, writable: !0 }) : d[t] = e, d;
 }
-function D1(d, t, e) {
+function M1(d, t, e) {
   return I1(d, bd(bd({}, t), {}, {
     v2: !0
   }), e);
@@ -3055,7 +3055,7 @@ function gd(d, t) {
   }
   return e;
 }
-function M1(d) {
+function D1(d) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
     t % 2 ? gd(Object(e), !0).forEach(function(n) {
@@ -3124,7 +3124,7 @@ function G1(d) {
   else
     throw new TypeError("A text for parsing must be a string.");
   if (!r || typeof r == "string")
-    $ ? (a = o, u = $) : (a = void 0, u = o), r && (a = M1({
+    $ ? (a = o, u = $) : (a = void 0, u = o), r && (a = D1({
       defaultCountry: r
     }, a));
   else if (_1(r))
@@ -3169,7 +3169,7 @@ function U1(d, t, e) {
     defaultCountry: void 0
   }));
   try {
-    return D1(d, t, e);
+    return M1(d, t, e);
   } catch (n) {
     if (!(n instanceof m))
       throw n;
@@ -3672,27 +3672,7 @@ const o0 = /* @__PURE__ */ Ud({
   }
 }), $0 = {
   install(d, t = {}) {
-    const {
-      dropdownOptions: e,
-      inputOptions: n,
-      ...r
-    } = t, {
-      dropdownOptions: o,
-      inputOptions: $,
-      ...i
-    } = defaultOptions;
-    utils.options = {
-      inputOptions: {
-        ...$,
-        ...n
-      },
-      dropdownOptions: {
-        ...o,
-        ...e
-      },
-      ...i,
-      ...r
-    }, d.component("phone-input", o0);
+    d.component("phone-input", o0);
   }
 };
 export {
