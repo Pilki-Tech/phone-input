@@ -1,4 +1,4 @@
-import { resolveDirective as Ld, openBlock as f, createElementBlock as h, normalizeClass as g, withDirectives as j, withKeys as P, createElementVNode as N, createCommentVNode as C, toDisplayString as x, renderSlot as J, withModifiers as Bd, vModelText as Fd, Fragment as Gd, renderList as _d, vModelDynamic as Vd, defineComponent as Ud, createBlock as Kd, unref as Hd } from "vue";
+import { resolveDirective as Ld, openBlock as p, createElementBlock as h, normalizeClass as g, withDirectives as j, withKeys as P, createElementVNode as N, createCommentVNode as C, toDisplayString as x, renderSlot as J, withModifiers as Bd, vModelText as Fd, Fragment as Gd, renderList as _d, vModelDynamic as Vd, defineComponent as Ud, createVNode as Kd, unref as Hd } from "vue";
 const Wd = [
   [
     "Afghanistan (‫افغانستان‬‎)",
@@ -1640,7 +1640,7 @@ function X(d, t) {
 function k(d, t, e) {
   return t && X(d.prototype, t), e && X(d, e), Object.defineProperty(d, "prototype", { writable: !1 }), d;
 }
-var pt = "1.2.0", ft = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ */ function() {
+var ft = "1.2.0", pt = "1.7.35", dd = " ext. ", ht = /^\d+$/, l = /* @__PURE__ */ function() {
   function d(t) {
     M(this, d), gt(t), this.metadata = t, Id.call(this, t);
   }
@@ -2071,13 +2071,13 @@ function Ct(d, t) {
 }
 function Id(d) {
   var t = d.version;
-  typeof t == "number" ? (this.v1 = t === 1, this.v2 = t === 2, this.v3 = t === 3, this.v4 = t === 4) : t ? Q(t, pt) === -1 ? this.v2 = !0 : Q(t, ft) === -1 ? this.v3 = !0 : this.v4 = !0 : this.v1 = !0;
+  typeof t == "number" ? (this.v1 = t === 1, this.v2 = t === 2, this.v3 = t === 3, this.v4 = t === 4) : t ? Q(t, ft) === -1 ? this.v2 = !0 : Q(t, pt) === -1 ? this.v3 = !0 : this.v4 = !0 : this.v1 = !0;
 }
 var Ot = ";ext=", O = function(d) {
   return "([".concat(b, "]{1,").concat(d, "})");
 };
 function Nd(d) {
-  var t = "20", e = "15", n = "9", r = "6", o = "[  \\t,]*", $ = "[:\\.．]?[  \\t,-]*", i = "#?", a = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", u = "(?:[xｘ#＃~～]|int|ｉｎｔ)", p = "[- ]+", c = "[  \\t]*", v = "(?:,{2}|;)", w = Ot + O(t), Dd = o + a + $ + O(t) + i, Md = o + u + $ + O(n) + i, kd = p + O(r) + "#", jd = c + v + $ + O(e) + i, Rd = c + "(?:,)+" + $ + O(n) + i;
+  var t = "20", e = "15", n = "9", r = "6", o = "[  \\t,]*", $ = "[:\\.．]?[  \\t,-]*", i = "#?", a = "(?:e?xt(?:ensi(?:ó?|ó))?n?|ｅ?ｘｔｎ?|доб|anexo)", u = "(?:[xｘ#＃~～]|int|ｉｎｔ)", f = "[- ]+", c = "[  \\t]*", v = "(?:,{2}|;)", w = Ot + O(t), Dd = o + a + $ + O(t) + i, Md = o + u + $ + O(n) + i, kd = f + O(r) + "#", jd = c + v + $ + O(e) + i, Rd = c + "(?:,)+" + $ + O(n) + i;
   return w + "|" + Dd + "|" + Md + "|" + kd + "|" + jd + "|" + Rd;
 }
 var wt = "[" + b + "]{" + H + "}", Pt = "[" + W + "]{0,1}(?:[" + T + "]*[" + b + "]){3,}[" + T + b + "]*", St = new RegExp("^[" + W + "]{0,1}(?:[" + T + "]*[" + b + "]){1,2}$", "i"), It = Pt + // Phone number extensions
@@ -2392,10 +2392,10 @@ function Kt(d) {
   }
   if (!xd(t))
     return {};
-  var p = {
+  var f = {
     number: t
   };
-  return e && (p.ext = e), p;
+  return e && (f.ext = e), f;
 }
 function Ht(d) {
   var t = d.number, e = d.ext;
@@ -2624,7 +2624,7 @@ function i1(d, t, e, n, r) {
   if (i)
     return "".concat(i, " ").concat(e, " ").concat(D(d, null, "INTERNATIONAL", r));
 }
-function pd(d, t) {
+function fd(d, t) {
   var e = Object.keys(d);
   if (Object.getOwnPropertySymbols) {
     var n = Object.getOwnPropertySymbols(d);
@@ -2634,12 +2634,12 @@ function pd(d, t) {
   }
   return e;
 }
-function fd(d) {
+function pd(d) {
   for (var t = 1; t < arguments.length; t++) {
     var e = arguments[t] != null ? arguments[t] : {};
-    t % 2 ? pd(Object(e), !0).forEach(function(n) {
+    t % 2 ? fd(Object(e), !0).forEach(function(n) {
       $1(d, n, e[n]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(d, Object.getOwnPropertyDescriptors(e)) : pd(Object(e)).forEach(function(n) {
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(d, Object.getOwnPropertyDescriptors(e)) : fd(Object(e)).forEach(function(n) {
       Object.defineProperty(d, n, Object.getOwnPropertyDescriptor(e, n));
     });
   }
@@ -2717,7 +2717,7 @@ var s1 = /* @__PURE__ */ function() {
   }, {
     key: "format",
     value: function(t, e) {
-      return r1(this, t, e ? fd(fd({}, e), {}, {
+      return r1(this, t, e ? pd(pd({}, e), {}, {
         v2: !0
       }) : {
         v2: !0
@@ -2742,7 +2742,7 @@ var s1 = /* @__PURE__ */ function() {
 }(), l1 = function(d) {
   return /^[A-Z]{2}$/.test(d);
 }, c1 = new RegExp("([" + b + "])");
-function p1(d, t, e, n) {
+function f1(d, t, e, n) {
   if (t) {
     var r = new l(n);
     r.selectNumberingPlan(t, e);
@@ -2755,7 +2755,7 @@ function p1(d, t, e, n) {
     }
   }
 }
-function f1(d, t) {
+function p1(d, t) {
   if (d && t.numberingPlan.nationalPrefixForParsing()) {
     var e = new RegExp("^(?:" + t.numberingPlan.nationalPrefixForParsing() + ")"), n = e.exec(d);
     if (n) {
@@ -2768,7 +2768,7 @@ function f1(d, t) {
       }
       var u;
       if (i) {
-        var p = d.indexOf(n[1]), c = d.slice(0, p);
+        var f = d.indexOf(n[1]), c = d.slice(0, f);
         c === t.numberingPlan.nationalPrefix() && (u = t.numberingPlan.nationalPrefix());
       } else
         u = n[0];
@@ -2784,7 +2784,7 @@ function f1(d, t) {
   };
 }
 function U(d, t) {
-  var e = f1(d, t), n = e.carrierCode, r = e.nationalNumber;
+  var e = p1(d, t), n = e.carrierCode, r = e.nationalNumber;
   if (r !== d) {
     if (!h1(d, r, t))
       return {
@@ -2831,7 +2831,7 @@ function b1(d, t, e, n) {
   if (!d)
     return {};
   if (d[0] !== "+") {
-    var r = p1(d, t, e, n);
+    var r = f1(d, t, e, n);
     if (r && r !== d)
       d = "+" + r;
     else {
@@ -2922,7 +2922,7 @@ function I1(d, t, e) {
       throw $ === "TOO_SHORT" ? new m("TOO_SHORT") : new m("NOT_A_NUMBER");
     return {};
   }
-  var i = T1(r, t.defaultCountry, t.defaultCallingCode, e), a = i.country, u = i.nationalNumber, p = i.countryCallingCode, c = i.carrierCode;
+  var i = T1(r, t.defaultCountry, t.defaultCallingCode, e), a = i.country, u = i.nationalNumber, f = i.countryCallingCode, c = i.carrierCode;
   if (!e.hasSelectedNumberingPlan()) {
     if (t.v2)
       throw new m("INVALID_COUNTRY");
@@ -2939,13 +2939,13 @@ function I1(d, t, e) {
     return {};
   }
   if (t.v2) {
-    var v = new s1(p, u, e.metadata);
+    var v = new s1(f, u, e.metadata);
     return a && (v.country = a), c && (v.carrierCode = c), o && (v.ext = o), v;
   }
   var w = (t.extended ? e.hasSelectedNumberingPlan() : a) ? y(u, e.nationalNumberPattern()) : !1;
   return t.extended ? {
     country: a,
-    countryCallingCode: p,
+    countryCallingCode: f,
     carrierCode: c,
     valid: w,
     possible: w ? !0 : !!(t.extended === !0 && e.possibleLengths() && Td(u, e)),
@@ -3001,12 +3001,12 @@ function T1(d, t, e, n) {
     return {
       countryCallingCode: o
     };
-  var a = U(od($), n), u = a.nationalNumber, p = a.carrierCode, c = C1(o, u, n);
+  var a = U(od($), n), u = a.nationalNumber, f = a.carrierCode, c = C1(o, u, n);
   return c && (i = c, c === "001" || n.country(i)), {
     country: i,
     countryCallingCode: o,
     nationalNumber: u,
-    carrierCode: p
+    carrierCode: f
   };
 }
 function md(d, t) {
@@ -3527,10 +3527,10 @@ const z1 = {
 }, q1 = { class: "vti__dropdown-arrow" }, Q1 = ["placeholder"], X1 = ["onClick", "onMousemove", "aria-selected"], d0 = { key: 1 }, t0 = ["type", "autocomplete", "autofocus", "disabled", "id", "maxlength", "name", "placeholder", "readonly", "required", "tabindex", "value", "aria-describedby"];
 function e0(d, t, e, n, r, o) {
   const $ = Ld("click-outside");
-  return f(), h("div", {
+  return p(), h("div", {
     class: g(["vue-tel-input", e.styleClasses, { disabled: e.disabled }])
   }, [
-    j((f(), h("div", {
+    j((p(), h("div", {
       "aria-label": "Country Code Selector",
       "aria-haspopup": "listbox",
       "aria-expanded": r.open,
@@ -3546,22 +3546,22 @@ function e0(d, t, e, n, r, o) {
       onClick: t[3] || (t[3] = (...i) => o.toggleDropdown && o.toggleDropdown(...i))
     }, [
       N("span", Y1, [
-        e.dropdownOptions.showFlags ? (f(), h("span", {
+        e.dropdownOptions.showFlags ? (p(), h("span", {
           key: 0,
           class: g(["vti__flag", r.activeCountryCode.toLowerCase()])
         }, null, 2)) : C("", !0),
-        e.dropdownOptions.showDialCodeInSelection ? (f(), h("span", J1, " +" + x(o.activeCountry && o.activeCountry.dialCode), 1)) : C("", !0),
+        e.dropdownOptions.showDialCodeInSelection ? (p(), h("span", J1, " +" + x(o.activeCountry && o.activeCountry.dialCode), 1)) : C("", !0),
         J(d.$slots, "arrow-icon", { open: r.open }, () => [
           N("span", q1, x(r.open ? "▲" : "▼"), 1)
         ])
       ]),
-      r.open ? (f(), h("ul", {
+      r.open ? (p(), h("ul", {
         key: 0,
         ref: "list",
         class: g(["vti__dropdown-list", r.dropdownOpenDirection]),
         role: "listbox"
       }, [
-        e.dropdownOptions.showSearchBox ? j((f(), h("input", {
+        e.dropdownOptions.showSearchBox ? j((p(), h("input", {
           key: 0,
           class: "vti__input vti__search_box",
           "aria-label": "Search by country name or country code",
@@ -3573,7 +3573,7 @@ function e0(d, t, e, n, r, o) {
         }, null, 8, Q1)), [
           [Fd, r.searchQuery]
         ]) : C("", !0),
-        (f(!0), h(Gd, null, _d(o.sortedCountries, (i, a) => (f(), h("li", {
+        (p(!0), h(Gd, null, _d(o.sortedCountries, (i, a) => (p(), h("li", {
           role: "option",
           class: g(["vti__dropdown-item", o.getItemClass(a, i.iso2)]),
           key: i.iso2 + (i.preferred ? "-preferred" : ""),
@@ -3582,12 +3582,12 @@ function e0(d, t, e, n, r, o) {
           onMousemove: (u) => r.selectedIndex = a,
           "aria-selected": r.activeCountryCode === i.iso2 && !i.preferred
         }, [
-          e.dropdownOptions.showFlags ? (f(), h("span", {
+          e.dropdownOptions.showFlags ? (p(), h("span", {
             key: 0,
             class: g(["vti__flag", i.iso2.toLowerCase()])
           }, null, 2)) : C("", !0),
           N("strong", null, x(i.name), 1),
-          e.dropdownOptions.showDialCodeInList ? (f(), h("span", d0, " +" + x(i.dialCode), 1)) : C("", !0)
+          e.dropdownOptions.showDialCodeInList ? (p(), h("span", d0, " +" + x(i.dialCode), 1)) : C("", !0)
         ], 42, X1))), 128))
       ], 2)) : C("", !0)
     ], 42, Z1)), [
@@ -3656,17 +3656,19 @@ const o0 = /* @__PURE__ */ Ud({
   emits: ["update:modelValue"],
   setup(d, { emit: t }) {
     const e = ["BY", "UZ", "RU"], n = t, r = ($) => n("update:modelValue", `+${$.dialCode}`), o = ($) => n("update:modelValue", $);
-    return ($, i) => (f(), Kd(Hd(r0), {
-      "model-value": $.modelValue,
-      onlyCountries: e,
-      mode: "international",
-      inputOptions: {
-        placeholder: "Введите телефон"
-      },
-      class: "tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg",
-      onCountryChanged: r,
-      onOnInput: o
-    }, null, 8, ["model-value"]));
+    return ($, i) => (p(), h("div", null, [
+      Kd(Hd(r0), {
+        "model-value": $.modelValue,
+        onlyCountries: e,
+        mode: "international",
+        inputOptions: {
+          placeholder: "Введите телефон"
+        },
+        class: "tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg",
+        onCountryChanged: r,
+        onOnInput: o
+      }, null, 8, ["model-value"])
+    ]));
   }
 }), $0 = {
   install(d, t = {}) {
@@ -3694,6 +3696,5 @@ const o0 = /* @__PURE__ */ Ud({
   }
 };
 export {
-  o0 as PhoneInput,
   $0 as default
 };

@@ -24,17 +24,19 @@ const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValu
 </script>
 
 <template>
-  <vue-tel-input
-    :model-value="modelValue"
-    :onlyCountries="AVAILABLE_COUNTRIES"
-    mode="international"
-    :inputOptions="{
+  <div>
+    <vue-tel-input
+      :model-value="modelValue"
+      :onlyCountries="AVAILABLE_COUNTRIES"
+      mode="international"
+      :inputOptions="{
                   placeholder: 'Введите телефон'
                 }"
-    class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
-    @country-changed="countryChanged"
-    @on-input="emitUpdateModel"
-  />
+      class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
+      @country-changed="countryChanged"
+      @on-input="emitUpdateModel"
+    />
+  </div>
 </template>
 
 <style scoped lang="scss">
