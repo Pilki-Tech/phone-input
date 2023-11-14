@@ -18,6 +18,8 @@ const Wd = /* @__PURE__ */ Ld({
             placeholder: "Введите телефон"
           },
           class: "tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg",
+          defaultCountry: "RU",
+          validCharactersOnly: "",
           onCountryChanged: r,
           onOnInput: o
         }, null, 8, ["model-value"])

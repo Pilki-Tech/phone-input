@@ -32,6 +32,8 @@ const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValu
                   placeholder: 'Введите телефон'
                 }"
       class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
+      defaultCountry="RU"
+      validCharactersOnly
       @country-changed="countryChanged"
       @on-input="emitUpdateModel"
     />
