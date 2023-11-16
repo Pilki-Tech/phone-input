@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { defineProps, ref, defineExpose } from 'vue'
 import 'vue-tel-input/vue-tel-input.css';
 
 const AVAILABLE_COUNTRIES = ['BY', 'UZ', 'RU']
