@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, defineExpose, ref } from 'vue'
 import 'vue-tel-input/vue-tel-input.css';
 
 const AVAILABLE_COUNTRIES = ['BY', 'UZ', 'RU']
@@ -13,6 +13,7 @@ defineProps<{
   modelValue: string
 }>()
 const emits = defineEmits(['update:modelValue'])
+const vueTelInput = ref(null)
 const countryChanged = (data: {
   iso2: keyof typeof CurrentIso
   dialCode: string
@@ -20,11 +21,16 @@ const countryChanged = (data: {
 }) => emits('update:modelValue', `+${data.dialCode}`)
 
 const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValue)
+
+defineExpose({
+  input: vueTelInput.value
+})
 </script>
 
 <template>
   <div>
     <vue-tel-input
+      ref="vueTelInput"
       :model-value="modelValue"
       :onlyCountries="AVAILABLE_COUNTRIES"
       mode="international"
