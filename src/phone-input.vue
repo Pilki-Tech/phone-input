@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, defineExpose } from 'vue'
+import { withDefaults, ref, defineExpose } from 'vue'
 import 'vue-tel-input/vue-tel-input.css';
 
 const AVAILABLE_COUNTRIES = ['BY', 'UZ', 'RU']
@@ -9,9 +9,13 @@ enum CurrentIso {
   UZ = 'UZ'
 }
 
-defineProps<{
+const props = withDefaults(defineProps<{
   modelValue: string
-}>()
+  validCharactersOnly?: boolean
+}>(), {
+  validCharactersOnly: true
+})
+
 const emits = defineEmits(['update:modelValue'])
 const telInputRef = ref(null)
 const countryChanged = (data: {
@@ -39,7 +43,7 @@ defineExpose({
                 }"
       class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
       defaultCountry="RU"
-      validCharactersOnly
+      :valid-characters-only="props.validCharactersOnly"
       @country-changed="countryChanged"
       @on-input="emitUpdateModel"
     />
