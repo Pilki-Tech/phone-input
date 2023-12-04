@@ -27,7 +27,7 @@ const countryChanged = (data: {
 const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValue)
 
 defineExpose({
-  input: telInputRef.value
+  input: telInputRef
 })
 </script>
 

@@ -9,7 +9,7 @@ const zd = /* @__PURE__ */ Ld({
   setup(d, { expose: t, emit: e }) {
     const n = ["BY", "UZ", "RU"], r = d, o = e, $ = Bd(null), i = (a) => o("update:modelValue", `+${a.dialCode}`), u = (a) => o("update:modelValue", a);
     return t({
-      input: $.value
+      input: $
     }), (a, f) => {
       const l = Fd("vue-tel-input");
       return p(), h("div", null, [
