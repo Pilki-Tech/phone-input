@@ -12,8 +12,12 @@ enum CurrentIso {
 const props = withDefaults(defineProps<{
   modelValue: string
   validCharactersOnly?: boolean
+  defaultCountry?: string
+  autoDefaultCountry?: boolean
 }>(), {
-  validCharactersOnly: true
+  validCharactersOnly: true,
+  defaultCountry: 'RU',
+  autoDefaultCountry: true
 })
 
 const emits = defineEmits(['update:modelValue'])
@@ -32,22 +36,21 @@ defineExpose({
 </script>
 
 <template>
-  <div>
-    <vue-tel-input
-      ref="telInputRef"
-      :model-value="modelValue"
-      :onlyCountries="AVAILABLE_COUNTRIES"
-      mode="international"
-      :inputOptions="{
+  <vue-tel-input
+    ref="telInputRef"
+    :model-value="modelValue"
+    :onlyCountries="AVAILABLE_COUNTRIES"
+    mode="international"
+    :inputOptions="{
                   placeholder: 'Введите телефон'
                 }"
-      class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
-      defaultCountry="RU"
-      :valid-characters-only="props.validCharactersOnly"
-      @country-changed="countryChanged"
-      @on-input="emitUpdateModel"
-    />
-  </div>
+    class="tw-max-w-[100px] border-solid border-1 !border-gray-standard rounded-lg"
+    :default-country="defaultCountry"
+    :valid-characters-only="props.validCharactersOnly"
+    v-bind="$attrs"
+    @country-changed="countryChanged"
+    @on-input="emitUpdateModel"
+  />
 </template>
 
 <style scoped lang="scss">
