@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { withDefaults, ref, defineExpose } from 'vue'
-import 'vue-tel-input/vue-tel-input.css';
+import 'vue-tel-input/vue-tel-input.css'
+import type { ValidateReturnParams } from './statis-data'
 
 const AVAILABLE_COUNTRIES = ['BY', 'UZ', 'RU']
 enum CurrentIso {
@@ -20,7 +21,7 @@ const props = withDefaults(defineProps<{
   autoDefaultCountry: true
 })
 
-const emits = defineEmits(['update:modelValue'])
+const emits = defineEmits(['update:modelValue', 'validate'])
 const telInputRef = ref(null)
 const countryChanged = (data: {
   iso2: keyof typeof CurrentIso
@@ -29,6 +30,8 @@ const countryChanged = (data: {
 }) => emits('update:modelValue', `+${data.dialCode}`)
 
 const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValue)
+
+const validate = (validateValue: ValidateReturnParams) => emits('validate', validateValue)
 
 defineExpose({
   input: telInputRef
@@ -50,6 +53,7 @@ defineExpose({
     v-bind="$attrs"
     @country-changed="countryChanged"
     @on-input="emitUpdateModel"
+    @validate="validate"
   />
 </template>
 
