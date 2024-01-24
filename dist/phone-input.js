@@ -5,11 +5,14 @@ const Zd = /* @__PURE__ */ Bd({
     modelValue: {},
     validCharactersOnly: { type: Boolean, default: !0 },
     defaultCountry: { default: "RU" },
-    autoDefaultCountry: { type: Boolean, default: !0 }
+    autoDefaultCountry: { type: Boolean, default: !0 },
+    emitCountryChange: { type: Boolean, default: !0 }
   },
   emits: ["update:modelValue", "validate"],
   setup(d, { expose: t, emit: e }) {
-    const n = ["BY", "UZ", "RU"], r = d, o = e, $ = Ld(null), i = (s) => o("update:modelValue", `+${s.dialCode}`), a = (s) => o("update:modelValue", s), u = (s) => o("validate", s);
+    const n = ["BY", "UZ", "RU"], r = d, o = e, $ = Ld(null), i = (s) => {
+      r.emitCountryChange && o("update:modelValue", `+${s.dialCode}`);
+    }, a = (s) => o("update:modelValue", s), u = (s) => o("validate", s);
     return t({
       input: $
     }), (s, c) => {
