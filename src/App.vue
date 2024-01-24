@@ -7,6 +7,7 @@ const phone = ref('')
 <template>
   <phone-input
     v-model="phone"
+    :emit-country-change="true"
   />
 </template>
 

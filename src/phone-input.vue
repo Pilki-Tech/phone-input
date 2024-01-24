@@ -15,10 +15,12 @@ const props = withDefaults(defineProps<{
   validCharactersOnly?: boolean
   defaultCountry?: string
   autoDefaultCountry?: boolean
+  emitCountryChange?: boolean
 }>(), {
   validCharactersOnly: true,
   defaultCountry: 'RU',
-  autoDefaultCountry: true
+  autoDefaultCountry: true,
+  emitCountryChange: true
 })
 
 const emits = defineEmits(['update:modelValue', 'validate'])
@@ -27,7 +29,9 @@ const countryChanged = (data: {
   iso2: keyof typeof CurrentIso
   dialCode: string
   name: string
-}) => emits('update:modelValue', `+${data.dialCode}`)
+}) => {
+  if (props.emitCountryChange) emits('update:modelValue', `+${data.dialCode}`)
+}
 
 const emitUpdateModel = (newValue: string) => emits('update:modelValue', newValue)
 
